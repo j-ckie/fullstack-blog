@@ -1,0 +1,26 @@
+{
+    "development": {
+        "username": "gyvpzmzi",
+        "password": "z0aPbCofQ0TupA4wlj7w27XxTFNaKvOW",
+        "database": "gyvpzmzi",
+        "host": "rajje.db.elephantsql.com",
+        "dialect": "postgres",
+        "operatorsAliases": false
+    },
+    "test": {
+        "username": "gyvpzmzi",
+        "password": "z0aPbCofQ0TupA4wlj7w27XxTFNaKvOW",
+        "database": "gyvpzmzi",
+        "host": "rajje.db.elephantsql.com",
+        "dialect": "mysql",
+        "operatorsAliases": false
+    },
+    "production": {
+        "username": "gyvpzmzi",
+        "password": "z0aPbCofQ0TupA4wlj7w27XxTFNaKvOW",
+        "database": "gyvpzmzi",
+        "host": "rajje.db.elephantsql.com",
+        "dialect": "mysql",
+        "operatorsAliases": false
+    }
+}
