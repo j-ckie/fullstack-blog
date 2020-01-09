@@ -1,1 +1,1 @@
-Full stack blog with sequelize
+sequelize practice
