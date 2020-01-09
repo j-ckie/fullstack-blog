@@ -9,16 +9,12 @@ const VIEWS_PATH = path.join(__dirname, "/views")
 const mustacheExpress = require("mustache-express");
 
 // =============== users routes ===============
-const {
-    register
-    //login
-} = require("./handlers/users");
+const register = require("./handlers/register");
 // app.post("/login", login);
 
 app.use("/register", register);
 // ============================================
 
-app.get("/register", (req, res) => res.render("register"));
 app.get("/login", (req, res) => res.render("login"))
 
 app.use(express.static(path.join(__dirname, "partials")));
@@ -29,6 +25,7 @@ app.set("view engine", "mustache");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cors())
+// app.use(express.urlencoded());
 
 app.listen(3000, () => {
     console.log("Server is live on http://localhost:3000");

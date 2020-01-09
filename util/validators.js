@@ -24,7 +24,8 @@ exports.validateRegistration = data => {
     if (data.handle === "") errors.handle = emptyError;
     if (data.password === "") errors.password = emptyError;
     if (data.confirmPassword === "") errors.confirmPassword = emptyError;
-    if (data.password !== confirmPassword) errors.confirmPassword = "Passwords must match";
+    if (data.password !== data.confirmPassword) errors.confirmPassword = "Passwords must match";
+    console.log(data.confirmPassword)
 
     return {
         errors,
