@@ -4,21 +4,19 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const sequelize = require("sequelize");
 const Op = sequelize.Op;
-const models = require("./models");
-const SALT_ROUNDS = 10;
 const path = require("path");
 const VIEWS_PATH = path.join(__dirname, "/views")
 const mustacheExpress = require("mustache-express");
-const bcrypt = require("bcrypt");
 
 // =============== users routes ===============
 const {
-    register,
-    login
+    register
+    //login
 } = require("./handlers/users");
+// app.post("/login", login);
 
-app.post("/register", register);
-app.post("/login", login);
+app.use("/register", register);
+// ============================================
 
 app.get("/register", (req, res) => res.render("register"));
 app.get("/login", (req, res) => res.render("login"))

@@ -1,19 +1,22 @@
 const models = require("../models");
+const express = require("express");
+const router = express.Router()
 const bcrypt = require("bcrypt");
 const SALT_ROUNDS = 10;
 
 const {
-    validateRegistration,
-    validateLogin
+    validateRegistration
+    // validateLogin
 } = require("../util/validators");
 
 // register
-exports.register = (req, res) => {
+router.post("/register", (req, res) => {
     let email = req.body.email,
         name = req.body.name,
         handle = req.body.handle,
         password = req.body.password,
         confirmPassword = req.body.confirmPassword;
+    //console.log(req)
 
     const newUser = {
         email: email,
@@ -47,4 +50,6 @@ exports.register = (req, res) => {
                 }).catch(err => console.error(err));
             }
         });
-};
+});
+
+module.exports = router
